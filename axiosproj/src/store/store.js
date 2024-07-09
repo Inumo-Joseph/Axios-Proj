@@ -1,11 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { moviesApi } from "../actions/baseQuery";
+import { moviesApi } from "../components/reducers/baseQuery.js";
 import { setupListeners } from "@reduxjs/toolkit/query";
-
+import pageReducer from "../components/reducers/pageReducer.jsx";
 
 const store = configureStore({
 //out store gets configured with the using the API slice reducer we created. 
-    reducer:{ [moviesApi.reducerPath]: moviesApi.reducer
+    reducer:{ [moviesApi.reducerPath]: moviesApi.reducer,
+        page: pageReducer,
     },
 
 // RTK query  middleware that enables caching, invalidation and polling
