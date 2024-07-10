@@ -38,28 +38,7 @@ const Table = () => {
         width: '100%',
         
 
-        '& .MuiDataGrid-root': {
-          // Ensure the DataGrid takes up full width
-          width: '100%',
-          // Center the content
-          '& .MuiDataGrid-main': {
-            display: 'flex',
-            justifyContent: 'center',
-          },
-          // Adjust the virtual scroller
-          '& .MuiDataGrid-virtualScroller': {
-            width: '100% !important',
-            overflow: 'auto !important',
-            // Center the content within the scroller
-            '& > div': {
-              minWidth: '100%',
-            },
-          },
-          // Ensure headers take full width
-          '& .MuiDataGrid-columnHeaders': {
-            width: '100% !important',
-          },
-        },
+
 
       }}
     
