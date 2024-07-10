@@ -1,4 +1,6 @@
+import { Typography, colors } from "@mui/material";
 import React from "react";
+import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 
 //set of Genres id and name
 export const GENRES =
@@ -82,20 +84,35 @@ export const GENRES =
 
     //columns for MUI Data Grid
     export const COLUMNS = [
-        { field: "id", headerName: "TMDB-ID" },
-        { field: "title", headerName: "Title", width: 200 },
-        { field: "rating", headerName: "Rating", width: 80 },
-        { field: "genre", headerName: "Genre", width: 200 },
-        { field: "description", headerName: "Description", width: 500 },
+      
+        { field: "id", headerName: "TMDB-ID", headerAlign: 'center'  },
         {
           // Renders an image element based on the link given in the image row
           field: "image",
-          headerName: "Image",
+          headerName: "Poster",
           width: 200,
           renderCell: (params) => (
             <img src={`https://image.tmdb.org/t/p/w92${params.value}`} alt={params.row.title} />
           ),
+          
         },
+        { field: "title", headerName: "Title", width: 200},
+        { field: "rating", headerName: "Rating", width: 80 },
+        { field: "genre", headerName: "Genre", width: 200 },
+        { field: "description", headerName: "Description", width: 500,
+          renderCell: (params) => (
+            <Tooltip title={params.value} arrow >
+              <div style={{ 
+                overflow: 'hidden', 
+                
+              }}>
+                {params.value}
+              </div>
+            </Tooltip>
+          )
+         },
+        { field: "releaseD", headerName: "Release Date", width: 200},
+       
       ];
       
       
