@@ -3,7 +3,7 @@ import { Box, ThemeProvider, colors, textFieldClasses } from "@mui/material";
 import { useEffect, useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { useGetMovieListQuery } from "./reducers/baseQuery.js";
-import { setPage } from "./reducers/pageReducer.jsx"; 
+import { setPage } from "./reducers/pageReducer.js";
 import { useDispatch, useSelector } from 'react-redux';
 import { COLUMNS } from "./Options.jsx";
 import { row } from "./utils/Util.js";
@@ -65,7 +65,6 @@ const Table = () => {
           page={currentPage - 1} 
         />
         )
-      
       }
         
       </div>

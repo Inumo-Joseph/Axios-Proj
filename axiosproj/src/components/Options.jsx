@@ -1,6 +1,5 @@
 import React from "react";
 
-
 //set of Genres id and name
 export const GENRES =
     [ {

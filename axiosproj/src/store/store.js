@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { moviesApi } from "../components/reducers/baseQuery.js";
 import { setupListeners } from "@reduxjs/toolkit/query";
-import pageReducer from "../components/reducers/pageReducer.jsx";
+import pageReducer from "../components/reducers/pageReducer.js";
 
 const store = configureStore({
 //out store gets configured with the using the API slice reducer we created. 

@@ -1,4 +1,3 @@
-import { current } from "@reduxjs/toolkit";
 import axios from 'axios';
 import { createApi } from  '@reduxjs/toolkit/query/react'
 
