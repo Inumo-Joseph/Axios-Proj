@@ -12,8 +12,10 @@ import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 const Table = () => {
   const dispatch = useDispatch();
   const currentPage = useSelector((state) => state.page.currentPage); //currentPage variable from store
+  const moment = useSelector((state) => state.page.date);     
   const { data, isFetching } = useGetMovieListQuery(currentPage); // get movie api and set data and isfetching variables
   console.log(data);
+  console.log(moment)
 
   //handles the pagination
   const handlePageChange = async (newModel) => {
@@ -31,19 +33,16 @@ const Table = () => {
   };
 
   return (
-    <div className="container">
+    <div className="">
       {/* returns movie table box */}
       <Box
        sx={{
         width: '100%',
-        
-
-
-
       }}
     
       >
-        {"CURRENT POPULAR MOVIE TABLE "}
+        {"CURRENT POPULAR MOVIE TABLE "} 
+        <Typography sx={{font:''}}> Current Date {moment}</Typography>
       </Box>
       <hr></hr>
       {/* conditional rendering based on if data is currently being fetched */}
@@ -54,13 +53,11 @@ const Table = () => {
           sx={{
             "& .MuiDataGrid-columnHeader": {
               backgroundColor: "rgba(38, 119, 99, 0.8)",
-              color: "white",
+              color: "white", 
             },
-
-            
           }}
         >
-          <div style={{ height: 525 }}>
+          <div style={{ height: 580}}>
             <DataGrid
               sx={{
                 "& .MuiDataGrid-cell:hover": {
